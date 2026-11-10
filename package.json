@@ -37,6 +37,11 @@
     "electron:build:win": "node scripts/bump-electron-version.cjs && cross-env ELECTRON=true npm run build && electron-builder --win",
     "electron:build:linux": "node scripts/bump-electron-version.cjs && cross-env ELECTRON=true npm run build && electron-builder --linux",
     "electron:build:all": "node scripts/bump-electron-version.cjs && cross-env ELECTRON=true npm run build && electron-builder -mwl",
+    "mac:install": "./scripts/install-native-mac.sh",
+    "mac:native:generate": "xcodegen generate --spec macos/project.yml",
+    "mac:native:build": "swift build --package-path macos -c release",
+    "mac:native:install": "./scripts/install-native-mac.sh",
+    "mac:electron:install": "./scripts/install-electron-mac.sh",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
@@ -128,7 +133,11 @@
         "dmg",
         "zip"
       ],
-      "icon": "buildResources/icon.png"
+      "icon": "buildResources/icon.icns",
+      "identity": null,
+      "hardenedRuntime": false,
+      "entitlements": "buildResources/entitlements.mac.plist",
+      "entitlementsInherit": "buildResources/entitlements.mac.inherit.plist"
     },
     "win": {
       "target": [

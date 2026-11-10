@@ -41,3 +41,12 @@ coverage/
 .vitepress/cache
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+# macOS & Xcode
+.build/
+macos/.build/
+macos/.build-xcode/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+

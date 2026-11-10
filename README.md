@@ -208,13 +208,30 @@ See the [CLI README](./cli/README.md) for the full command reference.
 
 ---
 
-## 💻 Desktop App (Electron)
+## 💻 Desktop Apps (macOS Native & Electron)
 
-Download a pre-built app for **macOS, Windows, or Linux** from the [GitHub Actions artifacts](https://github.com/kobenguyent/kobeanqautils/actions/workflows/build-electron.yml), or build locally:
+KobeanQAUtils runs as a native desktop application on macOS, Windows, and Linux.
+
+### 🍏 Native macOS App (SwiftUI + WebKit) — *Recommended for Mac*
+A lightweight (~45 MB), blazing-fast native macOS application built with Swift 6 and WebKit:
+- **Zero Apple Developer Account required** — builds, self-signs with Ad-Hoc signing, and installs locally.
+- Integrated macOS menu bar, keyboard shortcuts, Safari Web Inspector, and dev-server live reload (`⇧⌘D`).
+- Open in Xcode anytime: `open macos/KobeanQAUtils.xcodeproj`.
 
 ```bash
-npm run electron:dev      # dev mode with hot reload
-npm run electron:build    # production build for your platform
+# One-command build & install to /Applications
+npm run mac:install       # or: make mac-install
+```
+
+👉 See the comprehensive [macOS Installation & Testing Guide](./INSTALLATION_MAC.md) for full details, Xcode workflows, and Gatekeeper tips.
+
+### ⚡ Electron Desktop App
+Download pre-built apps for **macOS, Windows, or Linux** from [GitHub Actions artifacts](https://github.com/kobenguyent/kobeanqautils/actions/workflows/build-electron.yml), or build locally:
+
+```bash
+npm run electron:dev            # dev mode with hot reload
+npm run mac:electron:install    # build, ad-hoc sign & install to /Applications on macOS
+npm run electron:build          # production build for your current platform
 ```
 
 **Key benefit**: No CORS restrictions — make API calls to any server, including localhost.

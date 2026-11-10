@@ -1,4 +1,4 @@
-.PHONY: help setup setup-quick setup-clean dev start build build-all test test-all lint clean
+.PHONY: help setup setup-quick setup-clean dev start build build-all test test-all lint clean mac-native-gen mac-native-build mac-native-install mac-electron-install mac-install
 
 # Default target
 .DEFAULT_GOAL := help
@@ -42,5 +42,20 @@ test-all: ## Run all tests across root, API, CLI, and MCP server
 lint: ## Run ESLint code checks
 	npm run lint
 
+mac-native-gen: ## Generate native macOS Xcode project with XcodeGen
+	npm run mac:native:generate
+
+mac-native-build: ## Build native macOS app via Swift
+	npm run mac:native:build
+
+mac-native-install: ## Build, ad-hoc sign, and install native macOS app to /Applications
+	npm run mac:native:install
+
+mac-electron-install: ## Build, ad-hoc sign, and install Electron desktop app to /Applications
+	npm run mac:electron:install
+
+mac-install: ## Alias for mac-native-install (recommended lightweight native macOS app)
+	npm run mac:install
+
 clean: ## Clean build artifacts and caches
-	rm -rf dist dist-ssr docs/.vitepress/dist api/dist cli/dist mcp-server/dist release out build coverage
+	rm -rf dist dist-ssr docs/.vitepress/dist api/dist cli/dist mcp-server/dist release out build coverage macos/.build macos/.build-xcode
