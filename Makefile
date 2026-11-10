@@ -1,4 +1,4 @@
-.PHONY: help setup setup-quick setup-clean dev start build build-all test test-all lint clean mac-native-gen mac-native-build mac-native-install mac-electron-install mac-install
+.PHONY: help setup setup-quick setup-clean dev start build build-all test test-all lint clean mac-native-gen mac-native-build mac-native-install mac-electron-install mac-install mac-package mac-dist
 
 # Default target
 .DEFAULT_GOAL := help
@@ -56,6 +56,12 @@ mac-electron-install: ## Build, ad-hoc sign, and install Electron desktop app to
 
 mac-install: ## Alias for mac-native-install (recommended lightweight native macOS app)
 	npm run mac:install
+
+mac-package: ## Build and package native macOS app into DMG and ZIP release artifacts
+	npm run mac:package
+
+mac-dist: ## Alias for mac-package
+	npm run mac:package
 
 clean: ## Clean build artifacts and caches
 	rm -rf dist dist-ssr docs/.vitepress/dist api/dist cli/dist mcp-server/dist release out build coverage macos/.build macos/.build-xcode

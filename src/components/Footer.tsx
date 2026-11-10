@@ -52,6 +52,15 @@ export const Footer: React.FC = () => {
               </a>
               <span className="footer-sep" aria-hidden="true">·</span>
               <a
+                href="https://github.com/kobenguyent/kobeanqautils/releases/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-link"
+              >
+                🍏 Download Native macOS
+              </a>
+              <span className="footer-sep" aria-hidden="true">·</span>
+              <a
                 href="https://github.com/kobenguyent/kobeanqautils"
                 target="_blank"
                 rel="noopener noreferrer"

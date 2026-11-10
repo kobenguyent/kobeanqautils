@@ -86,6 +86,27 @@ KobeanQAUtils offers **two macOS desktop options**:
   - ISTQB QA Flashcards (Spaced repetition study room powered by the SM-2 algorithm)
   - Architecture & Infographics (Visual architectural deep-dives: AI Agents & MCP, CI/CD Pipeline, and API Styles)
 
+### 📥 Method 0: Download Pre-Built Release Artifacts (On the Fly)
+
+You can download the pre-compiled, self-signed native macOS app directly without running any build commands:
+
+1. **Download the latest release**:
+   - 🍏 **[Download Native macOS DMG (Latest)](https://github.com/kobenguyent/kobeanqautils/releases/latest)** (`kobeanqautils-*-native-macos.dmg`, **4.1 MB**)
+   - 📦 **[Download Native macOS ZIP (Latest)](https://github.com/kobenguyent/kobeanqautils/releases/latest)** (`kobeanqautils-*-native-macos.zip`, **3.9 MB**)
+   - Or download fresh CI builds from [GitHub Actions Artifacts](https://github.com/kobenguyent/kobeanqautils/actions/workflows/build-electron.yml).
+
+2. **Install & Launch**:
+   - **For DMG**: Double-click `.dmg`, drag **KobeanQAUtils** into the `/Applications` folder shortcut.
+   - **For ZIP**: Unzip and move `KobeanQAUtils.app` to `/Applications`.
+   - **First Launch (Gatekeeper clearance for Ad-Hoc unsigned app)**:
+     If macOS blocks opening on first launch because the developer is unverified (Ad-Hoc signed):
+     ```bash
+     xattr -cr /Applications/KobeanQAUtils.app
+     ```
+     Or **Right-Click** ➔ **Open** ➔ Click **Open** in the dialog.
+
+---
+
 ### Method A: One-Command Automated Build & Install
 
 Run one command in your terminal from the repository root:
@@ -134,7 +155,23 @@ As an iOS/macOS developer, you can open and run the project directly in Xcode:
 
 ---
 
-### Method C: Fast Navigation & Instant Search
+### Method C: Packaging Distributable DMG & ZIP Artifacts Locally
+
+To create distributable `.dmg` and `.zip` release bundles with checksums right on your MacBook:
+
+```bash
+npm run mac:package
+# or: make mac-package
+```
+
+This compiles the Release app, signs it ad-hoc, and outputs:
+- `release/kobeanqautils-<version>-native-macos.dmg` (4.1 MB)
+- `release/kobeanqautils-<version>-native-macos.zip` (3.9 MB)
+- `release/kobeanqautils-<version>-native-macos.dmg.sha256`
+
+---
+
+### Method D: Fast Navigation & Instant Search
 
 The native macOS app features an integrated sidebar search filter:
 - Press **`⌘F`** or click the search field at the top of the sidebar.

@@ -213,15 +213,21 @@ See the [CLI README](./cli/README.md) for the full command reference.
 KobeanQAUtils runs as a native desktop application on macOS, Windows, and Linux.
 
 ### 🍏 Pure Native macOS App (SwiftUI) — *Recommended for Mac*
-An ultra-lightweight (**~2.5 MB**), blazing-fast 100% native macOS application built with Swift 6 and SwiftUI:
+An ultra-lightweight (**~4.1 MB**), blazing-fast 100% native macOS application built with Swift 6 and SwiftUI:
 - **No Hybrid WebViews or Electron** — pure Apple controls (`NavigationSplitView`, searchable sidebar, CryptoKit, CoreImage).
+- **Download on the fly**:
+  - 🍏 **[Download Native macOS DMG (Latest Release)](https://github.com/kobenguyent/kobeanqautils/releases/latest)** (`kobeanqautils-*-native-macos.dmg`)
+  - 📦 **[Download Native macOS ZIP (Latest Release)](https://github.com/kobenguyent/kobeanqautils/releases/latest)** (`kobeanqautils-*-native-macos.zip`)
 - **Zero Apple Developer Account required** — builds, self-signs with Ad-Hoc signing, and installs locally in `/Applications`.
-- **Complete QA Tool Suite**: Base64, Hash/HMAC, JWT Debugger, Password Generator, UUID v4, Unix Timestamp, TOTP 2FA, Text Analyzer, JSON Formatter, REST Client, Text Diff, QR Code Generator, and SQL Helper.
+- **Complete QA Tool Suite (47 Pure Native Engines)**: REST, WebSocket, GraphQL, gRPC, JWT, CryptoKit AES-GCM, Hash, UUID, TOTP, JSON Formatter & Tree Visualizer, API Collection Manager, Website Scanner, ISTQB CTFL v4 Exam, QA Checklists, Telecom Protocols (SIP/BLF/IVR), and more.
 - Open in Xcode anytime: `open macos/KobeanQAUtils.xcodeproj`.
 
 ```bash
 # One-command build & install to /Applications
 npm run mac:install       # or: make mac-install
+
+# Package distributable .dmg & .zip release artifacts locally
+npm run mac:package       # or: make mac-package
 ```
 
 👉 See the comprehensive [macOS Installation & Testing Guide](./INSTALLATION_MAC.md) for full details, Xcode workflows, and Gatekeeper tips.

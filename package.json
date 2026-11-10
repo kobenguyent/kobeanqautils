@@ -38,6 +38,8 @@
     "electron:build:linux": "node scripts/bump-electron-version.cjs && cross-env ELECTRON=true npm run build && electron-builder --linux",
     "electron:build:all": "node scripts/bump-electron-version.cjs && cross-env ELECTRON=true npm run build && electron-builder -mwl",
     "mac:install": "./scripts/install-native-mac.sh",
+    "mac:package": "./scripts/package-native-mac.sh",
+    "mac:dist": "./scripts/package-native-mac.sh",
     "mac:brand:generate": "python3 scripts/generate-brand-assets.py",
     "mac:native:generate": "xcodegen generate --spec macos/project.yml",
     "mac:native:build": "swift build --package-path macos -c release",

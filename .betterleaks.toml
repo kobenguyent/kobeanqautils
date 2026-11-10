@@ -12,4 +12,11 @@ paths = [
   '''api/src/routes/analysers\.ts''',
   '''api/openapi\.json''',
   '''src/components/utils/JWTDebugger\.tsx''',
+  '''macos/Sources/KobeanQAUtils/Views/Tools/JWTDebuggerView\.swift''',
+  '''release/''',
+  '''dist/''',
+  '''artifacts/''',
+]
+commits = [
+  "ceeb6192b452abcd0c59a5aac781866a5c013ade"
 ]
