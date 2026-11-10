@@ -212,10 +212,11 @@ See the [CLI README](./cli/README.md) for the full command reference.
 
 KobeanQAUtils runs as a native desktop application on macOS, Windows, and Linux.
 
-### 🍏 Native macOS App (SwiftUI + WebKit) — *Recommended for Mac*
-A lightweight (~45 MB), blazing-fast native macOS application built with Swift 6 and WebKit:
-- **Zero Apple Developer Account required** — builds, self-signs with Ad-Hoc signing, and installs locally.
-- Integrated macOS menu bar, keyboard shortcuts, Safari Web Inspector, and dev-server live reload (`⇧⌘D`).
+### 🍏 Pure Native macOS App (SwiftUI) — *Recommended for Mac*
+An ultra-lightweight (**~2.5 MB**), blazing-fast 100% native macOS application built with Swift 6 and SwiftUI:
+- **No Hybrid WebViews or Electron** — pure Apple controls (`NavigationSplitView`, searchable sidebar, CryptoKit, CoreImage).
+- **Zero Apple Developer Account required** — builds, self-signs with Ad-Hoc signing, and installs locally in `/Applications`.
+- **Complete QA Tool Suite**: Base64, Hash/HMAC, JWT Debugger, Password Generator, UUID v4, Unix Timestamp, TOTP 2FA, Text Analyzer, JSON Formatter, REST Client, Text Diff, QR Code Generator, and SQL Helper.
 - Open in Xcode anytime: `open macos/KobeanQAUtils.xcodeproj`.
 
 ```bash

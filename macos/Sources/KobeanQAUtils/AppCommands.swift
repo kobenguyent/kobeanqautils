@@ -1,57 +1,19 @@
 import SwiftUI
+import AppKit
 
 struct AppCommands: Commands {
-    @ObservedObject var appState: AppState
-    
     var body: some Commands {
-        CommandGroup(after: .newItem) {
-            Button("Reload Page") {
-                appState.reload()
+        CommandGroup(replacing: .appInfo) {
+            Button("About KobeanQAUtils") {
+                if let icon = AppDelegate.loadBrandIcon() {
+                    NSApplication.shared.orderFrontStandardAboutPanel(options: [
+                        .applicationIcon: icon,
+                        .version: "1.2.0"
+                    ])
+                } else {
+                    NSApplication.shared.orderFrontStandardAboutPanel(nil)
+                }
             }
-            .keyboardShortcut("r", modifiers: .command)
-            
-            Button("Force Reload") {
-                appState.reload()
-            }
-            .keyboardShortcut("r", modifiers: [.command, .shift])
-        }
-        
-        CommandMenu("Navigation") {
-            Button("Back") {
-                appState.goBack()
-            }
-            .keyboardShortcut("[", modifiers: .command)
-            .disabled(!appState.canGoBack)
-            
-            Button("Forward") {
-                appState.goForward()
-            }
-            .keyboardShortcut("]", modifiers: .command)
-            .disabled(!appState.canGoForward)
-            
-            Divider()
-            
-            Button("Toggle Dev / Bundled Mode") {
-                appState.toggleEnvironment()
-            }
-            .keyboardShortcut("d", modifiers: [.command, .shift])
-        }
-        
-        CommandGroup(after: .toolbar) {
-            Button("Zoom In") {
-                appState.zoomIn()
-            }
-            .keyboardShortcut("+", modifiers: .command)
-            
-            Button("Zoom Out") {
-                appState.zoomOut()
-            }
-            .keyboardShortcut("-", modifiers: .command)
-            
-            Button("Actual Size") {
-                appState.resetZoom()
-            }
-            .keyboardShortcut("0", modifiers: .command)
         }
         
         CommandGroup(replacing: .help) {

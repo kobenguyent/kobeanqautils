@@ -7,25 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00662654B60C7BCE0D25A2A8 /* AppLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D3D366FDC40A6F52CF69B3C /* AppLogo.png */; };
+		0F4FB5A62DEA000CBDB9A04E /* QRCodeToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE59CA1B0559587F7BAC2DAF /* QRCodeToolView.swift */; };
+		1749120DD11C3DD85299592D /* TimestampConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A03E654F1F146B72434B7D /* TimestampConverterView.swift */; };
+		1E08C65E6D9E04E1DB516CA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44A27E4E616B9791510865CA /* Assets.xcassets */; };
+		221172EC9E265689245208AC /* ToolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9AA3B90C897CF06090209D /* ToolHeaderView.swift */; };
 		24241250E4BE09188BCAE6F9 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D90A5A08471D11696D191B12 /* AppIcon.icns */; };
+		2E7AFD5BE61A3AEDECE1CDD4 /* ToolItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9002FCDCF1EE0BE8EBCAF90E /* ToolItem.swift */; };
+		3AC63AC5B16242D2B371552D /* JWTDebuggerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A413F37665C6FDC6E87A7 /* JWTDebuggerView.swift */; };
 		4702A944BDA2E2FB5445464A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7561E29B5FD63A57D274AED4 /* AppState.swift */; };
+		517AD3DE2851224169989D07 /* ClipboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED4BBE3560439B32A0103A2 /* ClipboardHelper.swift */; };
+		57EE46F784869363C238FB21 /* Base64ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168D03DEC73F029275826B93 /* Base64ToolView.swift */; };
+		605D385B539F33A5556551E2 /* HashGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7721D9F0DA8AF32113AC6B9C /* HashGeneratorView.swift */; };
+		67F0B3BC4793AAC572B7552B /* TextAnalyzerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F427A6BCD2676C2EB42843FE /* TextAnalyzerView.swift */; };
+		6B61188E2697561B196C2738 /* SQLHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D27BD2A01BF8D7605FC7 /* SQLHelperView.swift */; };
+		7D0EE7AD03E1168F46C9D14E /* JSONFormatterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B875591DF8AF291B5E6796 /* JSONFormatterView.swift */; };
 		86ADB0FC0D055DD0EFD83A4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C5D6577896F48F6F021475 /* ContentView.swift */; };
+		9ED166E8E4E52D39EA64F553 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4962219E5929911B817C354C /* AppIcon.png */; };
 		AFE8EF14EAED77EB0FD756F2 /* AppMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D52E2D9789A7A255E51967 /* AppMain.swift */; };
 		BD501AE9089178BF9C7A255E /* AppCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F2A3E696665886BD05D0E /* AppCommands.swift */; };
-		CBB31A4D028EC8F25132A197 /* LocalSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42EDB3ADEA5EA35A44D8BD1 /* LocalSchemeHandler.swift */; };
-		F1103C81E8D5E6E63AF6C2F4 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622995254EC69E06079B1FA2 /* WebViewContainer.swift */; };
+		CF1E440954AE37C445490BE6 /* PasswordGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867C575D0B550B60FC3D46DA /* PasswordGeneratorView.swift */; };
+		E9B76A8A00EA862B9862F050 /* TOTPGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA88C80B76DF257339E466 /* TOTPGeneratorView.swift */; };
+		ECE1785D0C5C8187027528E8 /* RESTClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F91901A5757D6F47AC8722A /* RESTClientView.swift */; };
+		FA8435C847AE579832F906F7 /* UUIDGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B9FEB75FAC05DAAFEEC61F /* UUIDGeneratorView.swift */; };
+		FE13EF4184328A712B17201A /* DiffComparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE6B5C3D510C326F1B0DAE7 /* DiffComparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A9AA3B90C897CF06090209D /* ToolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolHeaderView.swift; sourceTree = "<group>"; };
+		168D03DEC73F029275826B93 /* Base64ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base64ToolView.swift; sourceTree = "<group>"; };
+		44A27E4E616B9791510865CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F9AC18CB7C9980FE29ADB3 /* KobeanQAUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KobeanQAUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4962219E5929911B817C354C /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		4D3D366FDC40A6F52CF69B3C /* AppLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppLogo.png; sourceTree = "<group>"; };
 		51CF8402703D9CB13ACD8AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		622995254EC69E06079B1FA2 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
+		55B875591DF8AF291B5E6796 /* JSONFormatterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFormatterView.swift; sourceTree = "<group>"; };
+		6947D27BD2A01BF8D7605FC7 /* SQLHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLHelperView.swift; sourceTree = "<group>"; };
+		6F91901A5757D6F47AC8722A /* RESTClientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClientView.swift; sourceTree = "<group>"; };
+		740A413F37665C6FDC6E87A7 /* JWTDebuggerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDebuggerView.swift; sourceTree = "<group>"; };
 		7561E29B5FD63A57D274AED4 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		7721D9F0DA8AF32113AC6B9C /* HashGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashGeneratorView.swift; sourceTree = "<group>"; };
+		7CE6B5C3D510C326F1B0DAE7 /* DiffComparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffComparatorView.swift; sourceTree = "<group>"; };
+		83BA88C80B76DF257339E466 /* TOTPGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGeneratorView.swift; sourceTree = "<group>"; };
+		867C575D0B550B60FC3D46DA /* PasswordGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorView.swift; sourceTree = "<group>"; };
+		89B9FEB75FAC05DAAFEEC61F /* UUIDGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUIDGeneratorView.swift; sourceTree = "<group>"; };
+		9002FCDCF1EE0BE8EBCAF90E /* ToolItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolItem.swift; sourceTree = "<group>"; };
+		AE59CA1B0559587F7BAC2DAF /* QRCodeToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeToolView.swift; sourceTree = "<group>"; };
+		B4A03E654F1F146B72434B7D /* TimestampConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampConverterView.swift; sourceTree = "<group>"; };
+		BED4BBE3560439B32A0103A2 /* ClipboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardHelper.swift; sourceTree = "<group>"; };
 		C0C5D6577896F48F6F021475 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D4D52E2D9789A7A255E51967 /* AppMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMain.swift; sourceTree = "<group>"; };
 		D90A5A08471D11696D191B12 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
-		E42EDB3ADEA5EA35A44D8BD1 /* LocalSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSchemeHandler.swift; sourceTree = "<group>"; };
 		E72F2A3E696665886BD05D0E /* AppCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommands.swift; sourceTree = "<group>"; };
+		F427A6BCD2676C2EB42843FE /* TextAnalyzerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnalyzerView.swift; sourceTree = "<group>"; };
 		F8463F044ACCEA6B8E973D75 /* KobeanQAUtils.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KobeanQAUtils.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,8 +71,9 @@
 				D4D52E2D9789A7A255E51967 /* AppMain.swift */,
 				7561E29B5FD63A57D274AED4 /* AppState.swift */,
 				C0C5D6577896F48F6F021475 /* ContentView.swift */,
-				E42EDB3ADEA5EA35A44D8BD1 /* LocalSchemeHandler.swift */,
-				622995254EC69E06079B1FA2 /* WebViewContainer.swift */,
+				D31649A7FD38518ED22253D6 /* Helpers */,
+				ED3582C74EFCB2DEA1C394D4 /* Models */,
+				697F3C5584AA87643A19837F /* Views */,
 			);
 			path = KobeanQAUtils;
 			sourceTree = "<group>";
@@ -55,10 +90,30 @@
 			isa = PBXGroup;
 			children = (
 				D90A5A08471D11696D191B12 /* AppIcon.icns */,
+				4962219E5929911B817C354C /* AppIcon.png */,
+				4D3D366FDC40A6F52CF69B3C /* AppLogo.png */,
+				44A27E4E616B9791510865CA /* Assets.xcassets */,
 				51CF8402703D9CB13ACD8AE6 /* Info.plist */,
 				F8463F044ACCEA6B8E973D75 /* KobeanQAUtils.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		697F3C5584AA87643A19837F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7565832D79088B7D1C802FA1 /* Components */,
+				C225AAD916E393117A9F7A6B /* Tools */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7565832D79088B7D1C802FA1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0A9AA3B90C897CF06090209D /* ToolHeaderView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		BDB1B3B6D1464DE184243C8C /* Products */ = {
@@ -67,6 +122,42 @@
 				48F9AC18CB7C9980FE29ADB3 /* KobeanQAUtils.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C225AAD916E393117A9F7A6B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				168D03DEC73F029275826B93 /* Base64ToolView.swift */,
+				7CE6B5C3D510C326F1B0DAE7 /* DiffComparatorView.swift */,
+				7721D9F0DA8AF32113AC6B9C /* HashGeneratorView.swift */,
+				55B875591DF8AF291B5E6796 /* JSONFormatterView.swift */,
+				740A413F37665C6FDC6E87A7 /* JWTDebuggerView.swift */,
+				867C575D0B550B60FC3D46DA /* PasswordGeneratorView.swift */,
+				AE59CA1B0559587F7BAC2DAF /* QRCodeToolView.swift */,
+				6F91901A5757D6F47AC8722A /* RESTClientView.swift */,
+				6947D27BD2A01BF8D7605FC7 /* SQLHelperView.swift */,
+				F427A6BCD2676C2EB42843FE /* TextAnalyzerView.swift */,
+				B4A03E654F1F146B72434B7D /* TimestampConverterView.swift */,
+				83BA88C80B76DF257339E466 /* TOTPGeneratorView.swift */,
+				89B9FEB75FAC05DAAFEEC61F /* UUIDGeneratorView.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D31649A7FD38518ED22253D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BED4BBE3560439B32A0103A2 /* ClipboardHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		ED3582C74EFCB2DEA1C394D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9002FCDCF1EE0BE8EBCAF90E /* ToolItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ED5A6F8BF486AD33F71064FE = {
@@ -139,6 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				24241250E4BE09188BCAE6F9 /* AppIcon.icns in Resources */,
+				9ED166E8E4E52D39EA64F553 /* AppIcon.png in Resources */,
+				00662654B60C7BCE0D25A2A8 /* AppLogo.png in Resources */,
+				1E08C65E6D9E04E1DB516CA9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,9 +246,23 @@
 				BD501AE9089178BF9C7A255E /* AppCommands.swift in Sources */,
 				AFE8EF14EAED77EB0FD756F2 /* AppMain.swift in Sources */,
 				4702A944BDA2E2FB5445464A /* AppState.swift in Sources */,
+				57EE46F784869363C238FB21 /* Base64ToolView.swift in Sources */,
+				517AD3DE2851224169989D07 /* ClipboardHelper.swift in Sources */,
 				86ADB0FC0D055DD0EFD83A4C /* ContentView.swift in Sources */,
-				CBB31A4D028EC8F25132A197 /* LocalSchemeHandler.swift in Sources */,
-				F1103C81E8D5E6E63AF6C2F4 /* WebViewContainer.swift in Sources */,
+				FE13EF4184328A712B17201A /* DiffComparatorView.swift in Sources */,
+				605D385B539F33A5556551E2 /* HashGeneratorView.swift in Sources */,
+				7D0EE7AD03E1168F46C9D14E /* JSONFormatterView.swift in Sources */,
+				3AC63AC5B16242D2B371552D /* JWTDebuggerView.swift in Sources */,
+				CF1E440954AE37C445490BE6 /* PasswordGeneratorView.swift in Sources */,
+				0F4FB5A62DEA000CBDB9A04E /* QRCodeToolView.swift in Sources */,
+				ECE1785D0C5C8187027528E8 /* RESTClientView.swift in Sources */,
+				6B61188E2697561B196C2738 /* SQLHelperView.swift in Sources */,
+				E9B76A8A00EA862B9862F050 /* TOTPGeneratorView.swift in Sources */,
+				67F0B3BC4793AAC572B7552B /* TextAnalyzerView.swift in Sources */,
+				1749120DD11C3DD85299592D /* TimestampConverterView.swift in Sources */,
+				221172EC9E265689245208AC /* ToolHeaderView.swift in Sources */,
+				2E7AFD5BE61A3AEDECE1CDD4 /* ToolItem.swift in Sources */,
+				FA8435C847AE579832F906F7 /* UUIDGeneratorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +397,7 @@
 		CB6AC72A2DE37D7EFF124B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/KobeanQAUtils.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +405,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -313,7 +422,7 @@
 		E5B044ABB78A54216DA02F27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/KobeanQAUtils.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
@@ -321,6 +430,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

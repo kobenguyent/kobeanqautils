@@ -1,75 +1,118 @@
 import SwiftUI
+import AppKit
 
 struct ContentView: View {
-    @ObservedObject var appState: AppState
+    @StateObject private var appState = AppState()
     
     var body: some View {
-        VStack(spacing: 0) {
-            if appState.isLoading && appState.estimatedProgress < 1.0 {
-                ProgressView(value: appState.estimatedProgress, total: 1.0)
-                    .progressViewStyle(.linear)
-                    .frame(height: 2)
-                    .tint(.blue)
-            }
-            
-            WebViewContainer(appState: appState)
-        }
-        .frame(minWidth: 900, minHeight: 600)
-        .toolbar {
-            ToolbarItemGroup(placement: .navigation) {
-                Button(action: { appState.goBack() }) {
-                    Image(systemName: "chevron.left")
-                }
-                .disabled(!appState.canGoBack)
-                .help("Back (⌘[)")
+        NavigationSplitView {
+            sidebarContent
+                .navigationSplitViewColumnWidth(min: 220, ideal: 260, max: 320)
+        } detail: {
+            ZStack(alignment: .bottom) {
+                detailContent
+                    .frame(minWidth: 650, minHeight: 520)
                 
-                Button(action: { appState.goForward() }) {
-                    Image(systemName: "chevron.right")
-                }
-                .disabled(!appState.canGoForward)
-                .help("Forward (⌘])")
-                
-                Button(action: { appState.reload() }) {
-                    Image(systemName: "arrow.clockwise")
-                }
-                .help("Reload (⌘R)")
-            }
-            
-            ToolbarItemGroup(placement: .automatic) {
-                Picker("Environment", selection: $appState.environment) {
-                    ForEach(AppEnvironment.allCases) { env in
-                        Text(env.rawValue).tag(env)
+                // Toast notification
+                if let toast = appState.toastMessage {
+                    HStack(spacing: 8) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.green)
+                        Text(toast)
+                            .font(.subheadline)
+                            .fontWeight(.medium)
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .background(.ultraThickMaterial)
+                    .cornerRadius(20)
+                    .shadow(color: .black.opacity(0.18), radius: 8, x: 0, y: 4)
+                    .padding(.bottom, 24)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
-                .pickerStyle(.segmented)
-                .onChange(of: appState.environment) { _ in
-                    appState.loadCurrentEnvironment()
+            }
+        }
+        .environmentObject(appState)
+        .navigationTitle(appState.selectedTool.title)
+    }
+    
+    // MARK: - Sidebar
+    private var sidebarContent: some View {
+        List(selection: $appState.selectedTool) {
+            // Header Branding
+            HStack(spacing: 12) {
+                if let brandImage = AppDelegate.loadBrandLogo() {
+                    Image(nsImage: brandImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 32, height: 32)
+                        .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
                 }
-                .help("Switch between Bundled production assets and local Vite dev server")
                 
-                if appState.isDevServerReachable {
-                    Circle()
-                        .fill(Color.green)
-                        .frame(width: 8, height: 8)
-                        .help("Vite Dev Server is online at localhost:5173")
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("KobeanQAUtils")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                    Text("Native QA & Dev Suite")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
                 }
-                
-                Menu {
-                    Button("Zoom In (⌘+)") { appState.zoomIn() }
-                    Button("Zoom Out (⌘-)") { appState.zoomOut() }
-                    Button("Actual Size (⌘0)") { appState.resetZoom() }
-                    Divider()
-                    Button("Open in Default Browser") {
-                        if let url = appState.currentURL {
-                            NSWorkspace.shared.open(url)
-                        } else {
-                            NSWorkspace.shared.open(appState.environment.url)
+            }
+            .padding(.vertical, 6)
+            
+            ForEach(ToolCategory.allCases) { category in
+                let tools = appState.filteredTools(in: category)
+                if !tools.isEmpty {
+                    Section(header: Label(category.rawValue, systemImage: category.icon)) {
+                        ForEach(tools) { tool in
+                            NavigationLink(value: tool) {
+                                Label {
+                                    Text(tool.title)
+                                        .font(.subheadline)
+                                } icon: {
+                                    Image(systemName: tool.icon)
+                                        .foregroundColor(.accentColor)
+                                }
+                            }
                         }
                     }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
                 }
             }
+        }
+        .listStyle(.sidebar)
+        .searchable(text: $appState.searchText, placement: .sidebar, prompt: "Search tools (⌘F)...")
+    }
+    
+    // MARK: - Detail View Router
+    @ViewBuilder
+    private var detailContent: some View {
+        switch appState.selectedTool {
+        case .base64:
+            Base64ToolView()
+        case .hashGen:
+            HashGeneratorView()
+        case .jwtDebugger:
+            JWTDebuggerView()
+        case .passwordGen:
+            PasswordGeneratorView()
+        case .uuidGen:
+            UUIDGeneratorView()
+        case .timestamp:
+            TimestampConverterView()
+        case .totp:
+            TOTPGeneratorView()
+        case .textAnalyzer:
+            TextAnalyzerView()
+        case .jsonFormatter:
+            JSONFormatterView()
+        case .restClient:
+            RESTClientView()
+        case .diffComparator:
+            DiffComparatorView()
+        case .qrCode:
+            QRCodeToolView()
+        case .sqlHelper:
+            SQLHelperView()
         }
     }
 }

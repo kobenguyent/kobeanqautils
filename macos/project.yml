@@ -32,12 +32,13 @@ targets:
         PRODUCT_NAME: KobeanQAUtils
         PRODUCT_BUNDLE_IDENTIFIER: com.kobenguyent.kobeanqautils
         INFOPLIST_FILE: Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
         CODE_SIGN_ENTITLEMENTS: Resources/KobeanQAUtils.entitlements
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "-"
         DEVELOPMENT_TEAM: ""
         ENABLE_HARDENED_RUNTIME: NO
-        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         COMBINE_HIDPI_IMAGES: YES
         MARKETING_VERSION: "1.2.0"
         CURRENT_PROJECT_VERSION: "1"
