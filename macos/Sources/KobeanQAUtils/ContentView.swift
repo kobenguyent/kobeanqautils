@@ -113,6 +113,22 @@ struct ContentView: View {
             QRCodeToolView()
         case .sqlHelper:
             SQLHelperView()
+        case .colorConverter:
+            ColorConverterView()
+        case .markdownConverter:
+            MarkdownConverterView()
+        case .encryptionTool:
+            EncryptionToolView()
+        case .htpasswdGen:
+            HTPasswdGeneratorView()
+        case .loremIpsum:
+            LoremIpsumView()
+        case .dummyData:
+            DummyDataGeneratorView()
+        case .websocketClient:
+            WebSocketClientView()
+        case .testFileGen:
+            TestFileGeneratorView()
         }
     }
 }

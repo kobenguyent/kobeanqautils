@@ -30,10 +30,33 @@ KobeanQAUtils offers **two macOS desktop options**:
 
 ## 🚀 Option 1: Pure Native macOS App (Recommended)
 
-### Included Native QA Tools (100% Swift Engines):
-- **Encoding & Security**: Base64 (Standard & URL-Safe), Hash & Checksum (MD5, SHA-1, SHA-256, SHA-512, HMAC via CryptoKit), JWT Debugger (Token parsing & claim expiry evaluation), Password Generator (Entropy score & custom character sets).
-- **Data & Generators**: UUID/GUID Generator (Bulk v4 generation), Unix Timestamp Converter (Live ticker, Epoch ➔ Human Date & vice-versa), TOTP 2FA Authenticator (RFC 6238 with animated 30s circular countdown), Text & Character Analyzer (Chars, words, sentences, reading time).
-- **Developer & QA Tools**: JSON Formatter & Validator (Prettify 2/4 spaces, Minify, error detection), REST API Tester (GET, POST, PUT, DELETE, custom headers & pretty response), Text Diff Comparator (Line-by-line additions/deletions), QR Code Generator (CoreImage CIFilter, copy/save PNG), SQL Helper & Mock Data Generator.
+### Included Native QA Tools (21 Pure Swift Engines):
+- **Converters & Formatters**:
+  - Base64 Encoder / Decoder (Standard & URL-safe)
+  - JSON Formatter & Validator (Prettify 2/4 spaces, Minify, syntax validation)
+  - Unix Timestamp Converter (Live ticker, Epoch ➔ Human Date & vice-versa)
+  - Color Converter (HEX, RGB, HSL, CMYK, SwiftUI Color code, WCAG AA/AAA contrast ratios)
+  - Markdown to Confluence Wiki (Bidirectional Markdown ↔ Confluence/Jira wiki markup)
+- **Encoding & Security**:
+  - Hash & Checksum (MD5, SHA-1, SHA-256, SHA-384, SHA-512, HMAC via CryptoKit)
+  - JWT Debugger (Token parsing, header/payload inspection & claim expiration evaluation)
+  - Password Generator (Custom character sets, entropy score & bulk generation)
+  - AES-256-GCM Encryption / Decryption (Authenticated encryption via CryptoKit, Base64/Hex output)
+  - HTPasswd Generator (Apache/Nginx basic auth records via SHA-1, APR1-MD5, and multi-user lists)
+- **Data & Generators**:
+  - UUID / GUID Generator (Bulk v4 generation, lowercase/uppercase, hyphen toggles)
+  - TOTP 2FA Authenticator (RFC 6238 Base32 TOTP with 30s animated circular countdown)
+  - Text & Character Analyzer (Characters, words, sentences, lines, bytes, reading time)
+  - Lorem Ipsum Generator (Paragraphs, sentences, words, bullet lists, HTML wrappers)
+  - Dummy Data Generator (Realistic mock profiles with Luhn-valid credit cards, JSON/CSV/SQL export)
+- **API & Network Testing**:
+  - REST API Tester (GET, POST, PUT, DELETE, custom headers, response timing & formatted output)
+  - WebSocket Client Tester (Native `URLSessionWebSocketTask` live traffic tester, ping/pong & logs)
+- **Developer & QA Tools**:
+  - Text Diff Comparator (Side-by-side / unified line-by-line differences)
+  - QR Code Generator (CoreImage `CIFilter`, copy image, save PNG)
+  - SQL Helper & Formatter (SQL keyword beautifier and mock INSERT query generator)
+  - Test File Generator (Generate files of exact byte/KB/MB sizes with zeros, random bytes, text, CSV, or JSON)
 
 ### Method A: One-Command Automated Build & Install
 
