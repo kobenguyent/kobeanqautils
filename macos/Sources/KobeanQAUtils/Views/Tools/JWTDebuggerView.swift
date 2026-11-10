@@ -3,7 +3,7 @@ import SwiftUI
 struct JWTDebuggerView: View {
     @EnvironmentObject var appState: AppState
     
-    @State private var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvYmUgVCIsImFkbWluIjp0cnVlLCJpYXQiOjE1MTYyMzkwMjIsImV4cCI6MjAwMDAwMDAwMH0.Xv06L4Hk39N-71c1Vn1j5V8_p7h-u4lV06K4Hk39N-4"
+    @State private var token: String = ""
     
     struct DecodedJWT {
         var headerJSON: String = ""
@@ -86,10 +86,29 @@ struct JWTDebuggerView: View {
                         Text("Encoded JWT Token")
                             .font(.headline)
                             .foregroundColor(.secondary)
+                        
                         Spacer()
+                        
+                        Button(action: loadDemoToken) {
+                            Label("Load Demo Token", systemImage: "sparkles")
+                        }
+                        .buttonStyle(.bordered)
+                        .controlSize(.small)
+                        
                         if let pasted = ClipboardHelper.paste() {
-                            Button("Paste Token") { token = pasted }
-                                .buttonStyle(.borderless)
+                            Button(action: { token = pasted }) {
+                                Label("Paste Token", systemImage: "doc.on.clipboard")
+                            }
+                            .buttonStyle(.bordered)
+                            .controlSize(.small)
+                        }
+                        
+                        if !token.isEmpty {
+                            Button(action: { token = "" }) {
+                                Label("Clear", systemImage: "xmark.circle")
+                            }
+                            .buttonStyle(.bordered)
+                            .controlSize(.small)
                         }
                     }
                     
@@ -138,71 +157,127 @@ struct JWTDebuggerView: View {
                     .cornerRadius(8)
                 }
                 
-                // Decoded columns
-                HStack(alignment: .top, spacing: 16) {
-                    // Header
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text("Header (Algorithm & Type)")
-                                .fontWeight(.semibold)
-                                .foregroundColor(.red)
-                            Spacer()
-                            Button("Copy") { appState.copyAndToast(decoded.headerJSON) }
-                                .buttonStyle(.borderless)
-                                .disabled(decoded.headerJSON.isEmpty)
+                if token.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    // Empty State
+                    VStack(spacing: 12) {
+                        Image(systemName: "key.horizontal")
+                            .font(.system(size: 44))
+                            .foregroundColor(.secondary)
+                        Text("No JWT Token Entered")
+                            .font(.headline)
+                            .foregroundColor(.secondary)
+                        Text("Paste a JSON Web Token above or click 'Load Demo Token' to inspect headers, payload claims, and verify expiry.")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: 340)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 36)
+                    .background(Color(NSColor.controlBackgroundColor))
+                    .cornerRadius(8)
+                } else {
+                    // Decoded columns
+                    HStack(alignment: .top, spacing: 16) {
+                        // Header
+                        VStack(alignment: .leading, spacing: 6) {
+                            HStack {
+                                Text("Header (Algorithm & Type)")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.red)
+                                Spacer()
+                                Button("Copy") { appState.copyAndToast(decoded.headerJSON) }
+                                    .buttonStyle(.borderless)
+                                    .disabled(decoded.headerJSON.isEmpty)
+                            }
+                            
+                            TextEditor(text: .constant(decoded.headerJSON))
+                                .font(.system(.callout, design: .monospaced))
+                                .frame(minHeight: 130)
+                                .padding(8)
+                                .background(Color(NSColor.controlBackgroundColor))
+                                .cornerRadius(8)
+                                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.red.opacity(0.3), lineWidth: 1))
                         }
                         
-                        TextEditor(text: .constant(decoded.headerJSON))
-                            .font(.system(.callout, design: .monospaced))
-                            .frame(minHeight: 130)
-                            .padding(8)
-                            .background(Color(NSColor.controlBackgroundColor))
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.red.opacity(0.3), lineWidth: 1))
+                        // Payload
+                        VStack(alignment: .leading, spacing: 6) {
+                            HStack {
+                                Text("Payload (Data & Claims)")
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.purple)
+                                Spacer()
+                                Button("Copy") { appState.copyAndToast(decoded.payloadJSON) }
+                                    .buttonStyle(.borderless)
+                                    .disabled(decoded.payloadJSON.isEmpty)
+                            }
+                            
+                            TextEditor(text: .constant(decoded.payloadJSON))
+                                .font(.system(.callout, design: .monospaced))
+                                .frame(minHeight: 130)
+                                .padding(8)
+                                .background(Color(NSColor.controlBackgroundColor))
+                                .cornerRadius(8)
+                                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.purple.opacity(0.3), lineWidth: 1))
+                        }
                     }
                     
-                    // Payload
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Text("Payload (Data & Claims)")
+                    // Signature
+                    if !decoded.signature.isEmpty {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Signature")
                                 .fontWeight(.semibold)
-                                .foregroundColor(.purple)
-                            Spacer()
-                            Button("Copy") { appState.copyAndToast(decoded.payloadJSON) }
-                                .buttonStyle(.borderless)
-                                .disabled(decoded.payloadJSON.isEmpty)
+                                .foregroundColor(.blue)
+                            
+                            Text(decoded.signature)
+                                .font(.system(.callout, design: .monospaced))
+                                .textSelection(.enabled)
+                                .padding(8)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .background(Color(NSColor.controlBackgroundColor))
+                                .cornerRadius(8)
+                                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.blue.opacity(0.3), lineWidth: 1))
                         }
-                        
-                        TextEditor(text: .constant(decoded.payloadJSON))
-                            .font(.system(.callout, design: .monospaced))
-                            .frame(minHeight: 130)
-                            .padding(8)
-                            .background(Color(NSColor.controlBackgroundColor))
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.purple.opacity(0.3), lineWidth: 1))
-                    }
-                }
-                
-                // Signature
-                if !decoded.signature.isEmpty {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text("Signature")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.blue)
-                        
-                        Text(decoded.signature)
-                            .font(.system(.callout, design: .monospaced))
-                            .textSelection(.enabled)
-                            .padding(8)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color(NSColor.controlBackgroundColor))
-                            .cornerRadius(8)
-                            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.blue.opacity(0.3), lineWidth: 1))
                     }
                 }
             }
             .padding(20)
         }
+    }
+    
+    // MARK: - Dynamic Demo Token Generator (Constructed at runtime, zero static secrets)
+    private func loadDemoToken() {
+        let headerDict: [String: Any] = [
+            "alg": "HS256",
+            "typ": "JWT"
+        ]
+        let now = Int(Date().timeIntervalSince1970)
+        let exp = now + 86400 // Active for 24 hours
+        let payloadDict: [String: Any] = [
+            "sub": "qa_tester_9918",
+            "name": "Kobean QA Tester",
+            "role": "QA Automation Lead",
+            "admin": true,
+            "iat": now,
+            "exp": exp
+        ]
+        
+        func base64UrlEncode(_ dict: [String: Any]) -> String {
+            guard let data = try? JSONSerialization.data(withJSONObject: dict, options: [.sortedKeys]) else {
+                return ""
+            }
+            return data.base64EncodedString()
+                .replacingOccurrences(of: "+", with: "-")
+                .replacingOccurrences(of: "/", with: "_")
+                .replacingOccurrences(of: "=", with: "")
+        }
+        
+        let headerB64 = base64UrlEncode(headerDict)
+        let payloadB64 = base64UrlEncode(payloadDict)
+        let dummySignature = "mock_hmac_signature_for_qa_testing_only"
+        
+        token = "\(headerB64).\(payloadB64).\(dummySignature)"
+        appState.showToast("Loaded dynamic demonstration token")
     }
     
     private func relativeTime(from date: Date) -> String {
