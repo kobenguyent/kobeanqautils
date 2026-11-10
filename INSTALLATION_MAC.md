@@ -30,13 +30,17 @@ KobeanQAUtils offers **two macOS desktop options**:
 
 ## 🚀 Option 1: Pure Native macOS App (Recommended)
 
-### Included Native QA Tools (21 Pure Swift Engines):
+### Included Native QA Tools (47 Pure Swift Engines — Full Webapp Parity):
 - **Converters & Formatters**:
   - Base64 Encoder / Decoder (Standard & URL-safe)
   - JSON Formatter & Validator (Prettify 2/4 spaces, Minify, syntax validation)
+  - JSON Tree Visualizer (Interactive hierarchical tree inspection of JSON nodes with keypaths)
   - Unix Timestamp Converter (Live ticker, Epoch ➔ Human Date & vice-versa)
   - Color Converter (HEX, RGB, HSL, CMYK, SwiftUI Color code, WCAG AA/AAA contrast ratios)
   - Markdown to Confluence Wiki (Bidirectional Markdown ↔ Confluence/Jira wiki markup)
+  - Playwright ↔ CodeceptJS Converter (Automated bidirectional test script translator)
+  - HTML & Web Previewer (Sandboxed WebKit rendering with responsive device toggles)
+  - Media & Image Converter (Convert, resize, compress PNG/JPEG/TIFF/BMP and apply CoreImage filters)
 - **Encoding & Security**:
   - Hash & Checksum (MD5, SHA-1, SHA-256, SHA-384, SHA-512, HMAC via CryptoKit)
   - JWT Debugger (Token parsing, header/payload inspection & claim expiration evaluation)
@@ -52,11 +56,35 @@ KobeanQAUtils offers **two macOS desktop options**:
 - **API & Network Testing**:
   - REST API Tester (GET, POST, PUT, DELETE, custom headers, response timing & formatted output)
   - WebSocket Client Tester (Native `URLSessionWebSocketTask` live traffic tester, ping/pong & logs)
+  - GraphQL Query Tester (Execute queries & mutations with variables, headers, and formatted JSON)
+  - gRPC Client Tester (Test gRPC services and unary methods with protobuf JSON payloads)
+  - API Collection Manager (Parse Postman v2.1 & Insomnia JSON collections, inspect requests and export cURL/Swift)
+  - Website Health & Security Scanner (Audit SSL certificates, latency, security headers HSTS/CSP, and SEO metadata)
 - **Developer & QA Tools**:
   - Text Diff Comparator (Side-by-side / unified line-by-line differences)
+  - File Line-by-Line Comparator (Side-by-side and unified file diff with similarity % and export)
   - QR Code Generator (CoreImage `CIFilter`, copy image, save PNG)
   - SQL Helper & Formatter (SQL keyword beautifier and mock INSERT query generator)
   - Test File Generator (Generate files of exact byte/KB/MB sizes with zeros, random bytes, text, CSV, or JSON)
+  - File & Hex Inspector (Analyze file metadata, checksums, hex dumps, and Base64 URIs)
+  - Jira Comment & Panel Formatter (Format QA bug reports with Atlassian panels, tables, and notes)
+  - AI Prompt Enhancer (Transform raw instructions into structured system prompts with persona & constraints)
+  - JSON Multi-Turn Prompt Builder (Build LLM conversation prompts with OpenAI, Anthropic & Gemini export)
+- **DevOps & Automation**:
+  - CI/CD Pipeline Generator (Generate GitHub Actions, GitLab CI, and Jenkinsfile pipelines)
+  - Sequence Diagram Generator (Generate Mermaid sequence diagrams from test flows and scripts)
+  - GitHub PR Script Generator (Automate git branch creation, commits, and GitHub CLI PR creation)
+  - Log Collector & Bug Report (Analyze log streams, filter error levels, and export bug issues)
+  - QA Kanban Task Board (Track QA automation tasks with priority columns and local persistence)
+- **Reference & Learning**:
+  - Developer Command Book (Quick-reference searchable cheatsheet for Git, Docker, macOS, and Playwright)
+  - Testing Frameworks Cheatsheet (CLI commands & comparison matrix for Playwright, CodeceptJS, Cypress, Pytest, K6)
+  - Local LLM on Mac Guide (Apple Silicon unified memory sizing, quantization table, and Ollama/MLX setup)
+  - QA Test Checklists Suite (Interactive Web, API, and Mobile test verification checklists with Markdown export)
+  - Telecom Protocols (VoIP reference: SIP RFC 3261 methods/codes, BLF state simulator, and IVR DTMF tree)
+  - ISTQB CTFL v4 Practice Exam (Interactive CTFL v4 mock exam with timed quiz, instant rationales, and K-level tracking)
+  - ISTQB QA Flashcards (Spaced repetition study room powered by the SM-2 algorithm)
+  - Architecture & Infographics (Visual architectural deep-dives: AI Agents & MCP, CI/CD Pipeline, and API Styles)
 
 ### Method A: One-Command Automated Build & Install
 

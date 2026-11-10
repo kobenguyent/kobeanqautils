@@ -129,6 +129,58 @@ struct ContentView: View {
             WebSocketClientView()
         case .testFileGen:
             TestFileGeneratorView()
+        case .playwrightConverter:
+            PlaywrightConverterView()
+        case .graphqlClient:
+            GraphQLClientView()
+        case .fileProcessor:
+            FileProcessorView()
+        case .jiraComment:
+            JiraCommentView()
+        case .workflowGen:
+            WorkflowGeneratorView()
+        case .sequenceDiagram:
+            SequenceDiagramView()
+        case .githubPrGen:
+            GitHubPRScriptView()
+        case .commandBook:
+            CommandBookView()
+        case .htmlRenderer:
+            HtmlRendererView()
+        case .grpcClient:
+            GrpcClientView()
+        case .promptEnhancer:
+            PromptEnhancerView()
+        case .jsonPromptBuilder:
+            JsonPromptBuilderView()
+        case .logCollector:
+            LogCollectorView()
+        case .kanbanBoard:
+            KanbanBoardView()
+        case .flashcards:
+            FlashcardsView()
+        case .jsonVisualizer:
+            JsonVisualizerView()
+        case .mediaConverter:
+            MediaConverterView()
+        case .collectionManager:
+            CollectionManagerView()
+        case .websiteScanner:
+            WebsiteScannerView()
+        case .fileComparator:
+            FileComparatorView()
+        case .testingCheatsheet:
+            TestingCheatsheetView()
+        case .localLlmGuide:
+            LocalLLMGuideView()
+        case .qaChecklists:
+            QAChecklistsView()
+        case .telecomProtocols:
+            TelecomProtocolsView()
+        case .istqbExam:
+            ISTQBPracticeExamView()
+        case .architectureGuides:
+            ArchitectureGuidesView()
         }
     }
 }
